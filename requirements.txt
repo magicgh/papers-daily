@@ -1,4 +1,4 @@
 arxiv
-telebot
 pyyaml
 requests
+pyTelegramBotAPI

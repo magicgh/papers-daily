@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      TZ: "Asia/Shanghai"
     steps:
       
       - name: Checkout
@@ -27,6 +29,16 @@ jobs:
 
       - name: Run core module
         run: python ./core/main.py
+        
+      - name: Set up git user
+        - uses: fregante/setup-git-user@v1
+      
+      - name: Update daily arxiv
+        run: |
+          git add ./assets
+          git commit -m ":memo: Update daily arxiv ($(date '+%m-%d'))"
+          git push origin main
+      
 
 
       
