@@ -28,6 +28,9 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run core module
+        env:
+          TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN}}
+          CHAT_ID: ${{secrets.CHAT_ID}}
         run: python ./core/main.py
         
       - name: Set up git user
