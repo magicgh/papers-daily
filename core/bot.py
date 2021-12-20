@@ -2,6 +2,7 @@ import os
 import json
 import telebot
 import logging
+import requests
 import datetime
 
 token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
@@ -26,7 +27,6 @@ def convert_to_message(filename: str):
     """
 
     datenow = datetime.date.today()
-    output_date = datenow.strftime("%b %-d")
 
     with open(filename, "r") as f:
         content = f.read()
@@ -41,16 +41,15 @@ def convert_to_message(filename: str):
         open(output_filename, 'w').close()
 
     with open(output_filename, "a+") as f:
-        f.write(f"<b><ins>Daily Bulletin</ins> ({output_date})</b>\n")
         for topic in data.keys():
-            f.write(f"<b>#{topic.replace(' ','')}</b> \n")
+            f.write(f"<b><u>#{topic.replace(' ','')}</u></b> \n")
             for subtopic in data[topic].keys():
                 day_content = data[topic][subtopic]
                 if not day_content:
                     continue
                 # the head of each part
                 if topic != subtopic:
-                    f.write(f"#{subtopic.replace(' ','')} \n")
+                    f.write(f"<b>#{subtopic.replace(' ','')}</b> \n")
 
                 # sort papers by date
                 day_content = sort_papers(day_content, num_send)
@@ -64,13 +63,28 @@ def convert_to_message(filename: str):
     return output_filename
 
 
+def request_wallpaper():
+    url = 'https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=en-US'
+    r = requests.get(url)
+    return r.url
+
+
 def send_message(path):
 
     with open(path, 'r') as f:
         content = f.read()
 
+    img = request_wallpaper()
+    datenow = datetime.date.today()
+    output_date = datenow.strftime("%a, %b %-d")
+    title = f"<b>Daily Bulletin</b> ({output_date})"
     bot = telebot.TeleBot(token=token)
-    result = bot.send_message(chat_id=chat_id, text=content, parse_mode='HTML')
+    result_0 = bot.send_photo(chat_id=chat_id, photo=img, caption=title, parse_mode='HTML')
 
-    if result is not None:
+    if result_0 is not None:
+        logging.info('Send image successfully.')
+
+    result_1 = bot.send_message(chat_id=chat_id, text=content, parse_mode='HTML')
+
+    if result_1 is not None:
         logging.info('Send message successfully.')

@@ -12,7 +12,7 @@
     'Clustering': 'Clustering'
 
 "Reinforcement Learning":
-    "RL": '"Reinforcement Learning" OR "RL"'
+    "Reinforcement Learning": '"Reinforcement Learning" OR "RL"'
 
 "Continual Learning":
     "Continual Learning": '"Continual Learning" OR "Lifelong Learning"'
