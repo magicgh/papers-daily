@@ -1,4 +1,4 @@
 arxiv
 telebot
-yaml
+pyyaml
 requests
