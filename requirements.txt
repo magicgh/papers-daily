@@ -1,2 +1,4 @@
 arxiv
 telebot
+yaml
+requests
