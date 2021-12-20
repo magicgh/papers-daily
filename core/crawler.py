@@ -82,7 +82,7 @@ def get_daily_papers(topic: str, query: str, max_results: int = 2):
 def update_json_file(filename: str, data):
 
     if not os.path.exists(filename):
-        open(filename, 'w').close()
+        open(filename, 'x').close()
 
     with open(filename, "r") as f:
         content = f.read()

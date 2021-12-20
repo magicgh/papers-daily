@@ -38,7 +38,7 @@ def convert_to_message(filename: str):
     output_filename = os.path.join(".", "core", "history", f"{str(datenow)}.telegram.html")
 
     if not os.path.exists(output_filename):
-        open(output_filename, 'w').close()
+        open(output_filename, 'x').close()
 
     with open(output_filename, "a+") as f:
         for topic in data.keys():
