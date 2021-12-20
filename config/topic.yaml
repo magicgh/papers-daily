@@ -1,0 +1,19 @@
+'Computer Vision':
+    'Computer Vision': '"cs.CV" ANDNOT "Masked Autoencoder"'
+    'MAE': 'Masked Autoencoder'
+
+'NLP':
+    'NLP': '"cs.CL" ANDNOT "Prompt Tuning" ANDNOT "Sentence Embedding"'
+    'Prompt Tuning': 'Prompt Tuning'
+    'Sentence Embedding': 'Sentence Embedding'
+
+'Unsupervised Learning':
+    'Contrastive Learning': 'Contrastive Learning'
+    'Clustering': 'Clustering'
+
+"Reinforcement Learning":
+    "RL": '"Reinforcement Learning" OR "RL"'
+
+"Continual Learning":
+    "Continual Learning": '"Continual Learning" OR "Lifelong Learning"'
+
