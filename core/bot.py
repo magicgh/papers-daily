@@ -70,7 +70,7 @@ def convert_to_message(filename: str):
 def request_wallpaper():
     url = 'https://bing.biturl.top/?resolution=1920&format=json&index=0&mkt=en-UK'
     r = requests.get(url)
-    return r.json()['url']
+    return r.json()
 
 
 def send_message(path):
