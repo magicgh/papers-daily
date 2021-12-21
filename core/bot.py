@@ -68,9 +68,9 @@ def convert_to_message(filename: str):
 
 
 def request_wallpaper():
-    url = 'https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=en-UK'
+    url = 'https://bing.biturl.top/?resolution=1920&format=json&index=0&mkt=en-UK'
     r = requests.get(url)
-    return r.url
+    return r.json()['url']
 
 
 def send_message(path):
@@ -80,7 +80,7 @@ def send_message(path):
 
     img = request_wallpaper()
     logging.info(img)
-    
+
     datenow = datetime.date.today()
     output_date = datenow.strftime("%a, %b %-d")
     title = f"<b>Daily Bulletin</b> ({output_date})"
