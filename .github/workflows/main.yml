@@ -2,7 +2,7 @@ name: Push Daily ArXiv
 
 on:
   schedule:
-    - cron: "43 10 * * *"
+    - cron: "55 10 * * *"
   push:
     branches:
       - main
