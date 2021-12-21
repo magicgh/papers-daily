@@ -79,7 +79,8 @@ def send_message(path):
         content = f.read()
 
     img = request_wallpaper()
-    logging.info(f'{img}')
+    logging.info(img)
+    
     datenow = datetime.date.today()
     output_date = datenow.strftime("%a, %b %-d")
     title = f"<b>Daily Bulletin</b> ({output_date})"
