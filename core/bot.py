@@ -68,11 +68,10 @@ def convert_to_message(filename: str):
 
 
 def request_wallpaper():
-    url = 'https://bing.biturl.top/?resolution=1920&format=json&index=0'
+    base_url = "https://bing.com"
+    url = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&ensearch=1&setmkt=en-us'
     r = requests.get(url)
-    print(r.status_code)
-    print(url)
-    return r.json()
+    return base_url + r.json()['images'][0]['url']
 
 
 def send_message(path):
