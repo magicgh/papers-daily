@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'core/clean.py'
     paths:
       - 'core/**'
 

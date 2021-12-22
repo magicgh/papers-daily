@@ -1,15 +1,15 @@
 'Computer Vision':
     'Computer Vision': '"cs.CV" ANDNOT "Masked Autoencoder"'
-    'MAE': 'Masked Autoencoder'
+    'MAE': '"cs.AI" AND "Masked Autoencoder"'
 
 'NLP':
     'NLP': '"cs.CL" ANDNOT "Prompt Tuning" ANDNOT "Sentence Embedding"'
-    'Prompt Tuning': 'Prompt Tuning'
-    'Sentence Embedding': 'Sentence Embedding'
+    'Prompt Tuning': '"cs.AI" AND "Prompt Tuning"'
+    'Sentence Embedding': '"cs.AI" AND "Sentence Embedding"'
 
 'Unsupervised Learning':
-    'Contrastive Learning': 'Contrastive Learning'
-    'Clustering': 'Clustering'
+    'Contrastive Learning': '"cs.AI" AND "Contrastive Learning"'
+    'Clustering': '"cs.AI" AND "Clustering"'
 
 "Reinforcement Learning":
     "Reinforcement Learning": '"Reinforcement Learning" OR "RL"'
