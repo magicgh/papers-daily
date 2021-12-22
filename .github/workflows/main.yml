@@ -6,10 +6,9 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - 'core/clean.py'
     paths:
       - 'core/**'
+      - '!core/clean.py' 
 
 jobs:
   build:
