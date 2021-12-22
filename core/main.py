@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     if not os.path.exists(folder):
         os.makedirs(folder)
-    
+
     json_file = os.path.join(".", "assets", "daily_arxiv.json")
 
     update_json_file(json_file, data_collector)

@@ -38,7 +38,7 @@ def convert_to_message(filename: str):
     folder = os.path.join(".", "core", "history")
     if not os.path.exists(folder):
         os.makedirs(folder)
-    
+
     output_filename = os.path.join(".", "core", "history", f"{str(datenow)}.telegram.html")
 
     if not os.path.exists(output_filename):
