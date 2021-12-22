@@ -1,4 +1,4 @@
-name: Push Daily ArXiv
+name: Push daily arXiv
 
 on:
   schedule:
