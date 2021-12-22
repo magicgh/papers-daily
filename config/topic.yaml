@@ -1,6 +1,5 @@
 'Computer Vision':
     'Computer Vision': '"cs.CV" ANDNOT "Masked Autoencoder"'
-    'MAE': '"cs.AI" AND "Masked Autoencoder"'
 
 'NLP':
     'NLP': '"cs.CL" ANDNOT "Prompt Tuning" ANDNOT "Sentence Embedding"'
