@@ -51,7 +51,7 @@ def convert_to_message(filename: str):
                 day_content = data[topic][subtopic]
                 if not day_content:
                     continue
-                # the head of each part
+                
                 if topic != subtopic:
                     f.write(f"<b>#{subtopic.replace(' ','')}</b> \n")
 
