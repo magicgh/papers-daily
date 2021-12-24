@@ -31,8 +31,13 @@ jobs:
       - name: Update daily arxiv
         run: |
           git add ./assets
-          git commit -m ":memo: Clean paper list ($(date '+%m-%d'))"
-          git push origin main
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m ":memo: Clean paper list ($(date '+%m-%d'))";
+            git push origin main;
+          else
+            echo "no changes";
+          fi
+          
       
 
 
