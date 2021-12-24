@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f ./requirements/valse.txt ]; then pip install -r requirements.txt; fi
+          if [ -f ./requirements/valse.txt ]; then pip install -r ./requirements/valse.txt; fi
 
       - name: Run core module
         env:
