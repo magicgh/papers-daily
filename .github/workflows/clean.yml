@@ -8,6 +8,7 @@ on:
       - main
     paths:
       - 'core/clean.py'
+      - '/.github/workflows/clean.yml'
 
 jobs:
   build:
