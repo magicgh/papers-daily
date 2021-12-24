@@ -19,8 +19,12 @@ def clean_outdated_papers(filename: str):
     json_data = data.copy()
 
     for topic in json_data.keys():
-        for subtopic in data[topic].keys():
-            papers = data[topic][subtopic]
+        if not json_data[topic]:
+            del json_data[topic]
+        for subtopic in json_data[topic].keys():
+            papers = json_data[topic][subtopic]
+            if not papers:
+                del json_data[topic][subtopic]
             for id, info in papers.items():
                 if (datenow - info["publish_date"]).days > expire_days:
                     del papers[id]

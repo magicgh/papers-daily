@@ -1,10 +1,11 @@
 # Paper's Daily
 ![workflow status](https://github.com/magicgh/daily-arxiv-bot/actions/workflows/main.yml/badge.svg)  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/magicgh/daily-arxiv-bot/issues)
     
-Subscribe to our [Telegram Channel](https://t.me/daily_arxiv) to get the latest work about Computer Vision, NLP, etc., from arXiv, updated daily at about 11:00 AM (UTC +0). Topics are located in the `./config/topic.yaml`.
+Subscribe to our [Telegram Channel](https://t.me/papers_daily) to get the latest work about Artificial Intelligence, from arXiv and VALSE, updated daily from 11:00 AM to 13:00 AM (UTC+0). ArXiv Topics are located in the `./config/topic.yaml`.
 
 ## To-Do
 * Display more information about papers (like urls of pdf and repo)/papers (greater than 3) with regard to a specific topic by developing a static website. [Docusaurus](https://github.com/facebook/docusaurus) is preferred.
 * Speed up the process of crawling papers.
+* Crawling from Twitter.
 
 

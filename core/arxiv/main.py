@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     data_collector = dict()
 
-    yaml_path = os.path.join(".", "config", "topic.yaml")
+    yaml_path = os.path.join(".", "config", "arxiv.yaml")
     yaml_data = get_yaml_data(yaml_path)
 
     for topic, contents in yaml_data.items():

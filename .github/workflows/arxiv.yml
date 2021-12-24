@@ -1,0 +1,48 @@
+name: Push daily arXiv
+
+on:
+  schedule:
+    - cron: "52 10 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - 'core/arxiv/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f ./requirements/arxiv.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run core module
+        env:
+          TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN}}
+          CHAT_ID: ${{secrets.CHAT_ID}}
+        run: python ./core/arxiv/main.py
+        
+      - name: Set up git user
+        uses: fregante/setup-git-user@v1
+      
+      - name: Update daily arxiv
+        run: |
+          git add ./assets
+          git commit -m ":memo: Update daily arxiv ($(date '+%m-%d'))"
+          git push origin main
+      
+
+
+      
+      

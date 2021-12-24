@@ -1,14 +1,13 @@
-name: Push daily arXiv
+name: Push daily valse
 
 on:
   schedule:
-    - cron: "55 10 * * *"
+    - cron: "52 11 * * *"
   push:
     branches:
       - main
     paths:
-      - 'core/**'
-      - '!core/clean.py' 
+      - 'core/valse/**'
 
 jobs:
   build:
@@ -26,22 +25,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f ./requirements/valse.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run core module
         env:
           TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN}}
           CHAT_ID: ${{secrets.CHAT_ID}}
-        run: python ./core/main.py
-        
-      - name: Set up git user
-        uses: fregante/setup-git-user@v1
-      
-      - name: Update daily arxiv
-        run: |
-          git add ./assets
-          git commit -m ":memo: Update daily arxiv ($(date '+%m-%d'))"
-          git push origin main
+        run: python ./core/valse/main.py
       
 
 
