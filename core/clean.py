@@ -1,8 +1,11 @@
+import logging
 import os
 import json
 import datetime
 
-expire_days = 14
+expire_days = 90
+
+logging.basicConfig(level=logging.INFO)
 
 
 def clean_outdated_papers(filename: str):
@@ -18,23 +21,29 @@ def clean_outdated_papers(filename: str):
             return None
     json_data = data.copy()
 
-    for topic in json_data.keys():
+    for topic in list(json_data.keys()):
         if not json_data[topic]:
             del json_data[topic]
-        for subtopic in json_data[topic].keys():
+            continue
+        for subtopic in list(json_data[topic].keys()):
             papers = json_data[topic][subtopic]
             if not papers:
                 del json_data[topic][subtopic]
-            for id, info in papers.items():
-                if (datenow - info["publish_time"]).days > expire_days:
-                    del papers[id]
+                continue
+            for id, info in list(papers.items()):
+                history_date = datetime.datetime.strptime(info["publish_time"], '%Y-%m-%d').date()
+                if (datenow - history_date).days > expire_days:
+                    del json_data[topic][subtopic][id]
+                    continue
 
     with open(filename, "w") as f:
         json.dump(json_data, f)
 
+    logging.info('Cleaned.')
+
 
 if __name__ == '__main__':
-
+    
     folder = os.path.join(".", "assets")
     if not os.path.exists(folder):
         os.makedirs(folder)
