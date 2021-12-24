@@ -26,7 +26,7 @@ def clean_outdated_papers(filename: str):
             if not papers:
                 del json_data[topic][subtopic]
             for id, info in papers.items():
-                if (datenow - info["publish_date"]).days > expire_days:
+                if (datenow - info["publish_time"]).days > expire_days:
                     del papers[id]
 
     with open(filename, "w") as f:
