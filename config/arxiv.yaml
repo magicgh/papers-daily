@@ -3,7 +3,7 @@
 
 'NLP':
     'NLP': '"cs.CL" ANDNOT "Prompt Tuning" ANDNOT "Sentence Embedding"'
-    'Prompt Tuning': '"cs.AI" AND "Prompt Tuning"'
+    'Prompt Tuning': '"cs.AI" AND "Prompt"'
     'Sentence Embedding': '"cs.AI" AND "Sentence Embedding"'
 
 'Unsupervised Learning':
