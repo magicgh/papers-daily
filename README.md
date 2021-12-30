@@ -6,6 +6,6 @@ Subscribe to our [Telegram Channel](https://t.me/papers_daily) to get the latest
 ## To-Do
 * Display more information about papers (like urls of pdf and repo)/papers (greater than 3) with regard to a specific topic by developing a static website. [Docusaurus](https://github.com/facebook/docusaurus) is preferred.
 * Speed up the process of crawling papers.
-* Crawling from Twitter.
+* Refactor crawling mechanisms through RSS.
 
 
