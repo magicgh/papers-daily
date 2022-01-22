@@ -38,7 +38,7 @@ jobs:
       
       - name: Update daily valse
         run: |
-          git add ./assets
+          git add ./config/valse.yaml
           git commit -m ":memo: Update daily valse ($(date '+%m-%d'))"
           git push origin main
 
