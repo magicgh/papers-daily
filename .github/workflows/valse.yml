@@ -2,7 +2,7 @@ name: Push daily valse
 
 on:
   schedule:
-    - cron: "52 11 * * *"
+    - cron: "52 11 */7 * *"
   push:
     branches:
       - main
