@@ -10,7 +10,6 @@ chat_id = os.environ.get('CHAT_ID', '')
 
 num_send = 5
 
-
 def sort_papers(papers, length):
     output = dict()
     keys = list(papers.keys())
