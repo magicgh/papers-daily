@@ -1,0 +1,16 @@
+'Computer Vision':
+    'Computer Vision': '"cs.CV"'
+
+'NLP':
+    'NLP': '"cs.CL"'
+
+"Reinforcement Learning":
+    "Reinforcement Learning": '"Reinforcement Learning" OR "RL"'
+
+"Self-supervised Learning":
+    "Continual Learning": '"Continual Learning" OR "Lifelong Learning"'
+    "Meta Learning": '"Meta Learning"'
+    "Transfer Learning": '"Transfer Learning"'
+
+"Graph Neural Network"
+    "Graph Neural Network": '"Graph Neural Network'

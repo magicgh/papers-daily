@@ -3,7 +3,7 @@ import logging
 from bot import convert_to_message, send_message
 from crawler import get_yaml_data, get_daily_papers, update_json_file
 
-num_result = 7
+num_result = 5
 
 # DEBUG
 logging.basicConfig(level=logging.INFO)
@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     data_collector = dict()
 
-    yaml_path = os.path.join(".", "config", "arxiv.yaml")
+    yaml_path = os.path.join(".", "assets", "config.yaml")
     yaml_data = get_yaml_data(yaml_path)
 
     for topic, contents in yaml_data.items():
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     if not os.path.exists(folder):
         os.makedirs(folder)
 
-    json_file = os.path.join(".", "assets", "daily_arxiv.json")
+    json_file = os.path.join(".", "assets", "arxiv.json")
 
     update_json_file(json_file, data_collector)
 

@@ -43,9 +43,9 @@ def get_daily_papers(topic: str, query: str, max_results: int = 2):
         pdf_url = result.pdf_url
         code_url = base_url + paper_id
         paper_abstract = result.summary.replace("\n", " ")
-        paper_authors = get_authors(result.authors)
+        # paper_authors = get_authors(result.authors)
         paper_first_author = get_authors(result.authors, first_author=True)
-        primary_category = result.primary_category
+        # primary_category = result.primary_category
 
         publish_time = result.published.date()
 
@@ -63,6 +63,7 @@ def get_daily_papers(topic: str, query: str, max_results: int = 2):
               "publish_time": str(publish_time),
               "title": paper_title,
               "author": f"{paper_first_author} et.al.",
+              "abstract": paper_abstract,
               "paper_url": paper_url,
               "pdf_url": pdf_url
             }

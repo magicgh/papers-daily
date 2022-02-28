@@ -8,7 +8,7 @@ import datetime
 token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
 chat_id = os.environ.get('CHAT_ID', '')
 
-num_send = 3
+num_send = 5
 
 
 def sort_papers(papers, length):
@@ -35,11 +35,11 @@ def convert_to_message(filename: str):
         else:
             data = json.loads(content)
 
-    folder = os.path.join(".", "core", "history")
+    folder = os.path.join(".", "assets", "history")
     if not os.path.exists(folder):
         os.makedirs(folder)
 
-    output_filename = os.path.join(".", "core", "history", f"{str(datenow)}.telegram.html")
+    output_filename = os.path.join(".", "assets", "history", f"{str(datenow)}.telegram.html")
 
     if not os.path.exists(output_filename):
         open(output_filename, 'x').close()
@@ -60,7 +60,10 @@ def convert_to_message(filename: str):
 
                 for _, v in day_content.items():
                     if v is not None:
-                        f.write(f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a> \n')
+                        if v["repo_url"] is not None:
+                            f.write(f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a> <code><a href="{v["repo_url"]}">Code</a></code>\n')
+                        else:
+                            f.write(f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a>\n')
 
             f.write("\n")
     logging.info("Finished.")
