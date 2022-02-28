@@ -51,7 +51,7 @@ def convert_to_message(filename: str):
                 day_content = data[topic][subtopic]
                 if not day_content:
                     continue
-                
+
                 if topic != subtopic:
                     f.write(f"<b>#{subtopic.replace(' ','')}</b> \n")
 
@@ -61,7 +61,9 @@ def convert_to_message(filename: str):
                 for _, v in day_content.items():
                     if v is not None:
                         if v["repo_url"] is not None:
-                            f.write(f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a> <code><a href="{v["repo_url"]}">Code</a></code>\n')
+                            f.write(
+                              f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a> <code><a href="{v["repo_url"]}">Code</a></code>\n'
+                            )
                         else:
                             f.write(f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a>\n')
 
