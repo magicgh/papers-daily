@@ -61,10 +61,10 @@ def convert_to_message(filename: str):
                     if v is not None:
                         if v["repo_url"] is not None:
                             f.write(
-                              f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a> <a href="{v["repo_url"]}"><em>&lt;Code&gt;</em></a>\n'
+                              f'• <a href="{v["pdf_url"]}"><em>{v["title"]}</em></a> <a href="{v["paper_url"]}"><em>&lt;arXiv&gt;</em></a> <a href="{v["repo_url"]}"><em>&lt;Code&gt;</em></a>\n'
                             )
                         else:
-                            f.write(f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a>\n')
+                            f.write(f'• <a href="{v["pdf_url"]}"><em>{v["title"]}</em></a> <a href="{v["paper_url"]}"><em>&lt;arXiv&gt;</em></a>\n')
 
             f.write("\n")
     logging.info("Finished.")
