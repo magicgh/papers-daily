@@ -7,7 +7,7 @@
 "Reinforcement Learning":
     "Reinforcement Learning": '"Reinforcement Learning" OR "RL"'
 
-"Self-supervised Learning":
+"Unsupervised Learning":
     "Continual Learning": '"Continual Learning" OR "Lifelong Learning"'
     "Meta Learning": '"Meta Learning"'
     "Transfer Learning": '"Transfer Learning"'
