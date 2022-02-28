@@ -67,7 +67,6 @@ def convert_to_message(filename: str):
                             f.write(f'• <a href="{v["paper_url"]}"><em>{v["title"]}</em></a>\n')
 
                 f.write("\n")
-            f.write("\n")
     logging.info("Finished.")
     return output_filename
 
