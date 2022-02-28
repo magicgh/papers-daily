@@ -3,7 +3,7 @@ import logging
 from bot import convert_to_message, send_message
 from crawler import get_yaml_data, get_daily_papers, update_json_file
 
-num_result = 7
+num_result = 5
 
 # DEBUG
 logging.basicConfig(level=logging.INFO)
