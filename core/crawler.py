@@ -10,7 +10,7 @@ base_url = "https://arxiv.paperswithcode.com/api/v0/papers/"
 
 def get_authors(authors, first_author=False):
     output = str()
-    if first_author == False:
+    if first_author is False:
         output = ", ".join(str(author) for author in authors)
     else:
         output = authors[0]
