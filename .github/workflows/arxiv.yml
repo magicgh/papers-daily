@@ -3,11 +3,7 @@ name: Push daily arXiv
 on:
   schedule:
     - cron: "52 10 * * *"
-  push:
-    branches:
-      - main
-    paths:
-      - 'core/**'
+  workflow_dispatch:
 
 jobs:
   build:
